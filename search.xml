@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hexo-admin</title>
+    <url>/2019/12/16/admin/</url>
+    <content><![CDATA[<h5 id="插件介绍"><a href="#插件介绍" class="headerlink" title="插件介绍"></a>插件介绍</h5><p>hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。</p>
+<a id="more"></a>
+
+<h5 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h5><ol>
+<li>首先进入hexo创建的博客项目的根目录下，执行</li>
+</ol>
+<p><code>npm install --save hexo-admin</code></p>
+<p>mac可能需要root权限，前面加个sudo 就可以了（如果报错缺少组件，则缺少什么安装什么，npm install 加缺少的组件）。</p>
+<ol start="2">
+<li>运行下列命令启动hexo-admin：</li>
+</ol>
+<p><code>hexo server -d</code></p>
+<p>打开 <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a> 就可以访问到hexo-admin管理页面了。</p>
+<p><img src="/2019/12/16/admin/20191217.png" alt="管理界面"></p>
+]]></content>
+      <categories>
+        <category>随便写写</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 在博文中插入图片</title>
+    <url>/2019/12/10/photo/</url>
+    <content><![CDATA[<p><img src="/2019/12/10/photo/20191210.jpg" alt="插入本地图片"></p>
+<a id="more"></a>
+
+<ul>
+<li><p>插入本地图片需要修改主题_config.yml配置文件post_asset_folder项为true</p>
+</li>
+<li><p>使用插件达到插入本地图片，在根目录输入如下命令安装：</p>
+</li>
+</ul>
+<p><code>npm install hexo-asset-image --save</code></p>
+<p>上面的命令可能会有问题，然后执行下面的命令：</p>
+<p><code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></p>
+<p>之后new 一篇博客时/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹，把图片放到里面即可，最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，最后只需要在xxxx.md中按照markdown的格式引入图片：<br>![你想输入的替代文字]（xxxx/图片名.jpg）就可以了。</p>
+]]></content>
+      <categories>
+        <category>随便写写</category>
+      </categories>
+      <tags>
+        <tag>photo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客添加tags及categories</title>
+    <url>/2019/12/05/page/</url>
+    <content><![CDATA[<ul>
+<li><h3 id="创建分类和标签文件夹"><a href="#创建分类和标签文件夹" class="headerlink" title="创建分类和标签文件夹"></a>创建分类和标签文件夹</h3></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span></pre></td></tr><tr><td class="code"><pre><span class="line">hexo new page tags</span></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p><strong>找到各自文件夹下index.md这个文件，打开后并修改</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: categories</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2019-12-04 15:26:59</span></pre></td></tr><tr><td class="code"><pre><span class="line">type: categories</span></pre></td></tr><tr><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="code"><pre><span class="line">title: tags</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2019-12-04 15:10:52</span></pre></td></tr><tr><td class="code"><pre><span class="line">type: tags</span></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="配置菜单，「分类」、「标签」这些菜单"><a href="#配置菜单，「分类」、「标签」这些菜单" class="headerlink" title="配置菜单，「分类」、「标签」这些菜单"></a>配置菜单，「分类」、「标签」这些菜单</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span></pre></td></tr><tr><td class="code"><pre><span class="line">  home: &#x2F;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  archives: &#x2F;archives</span></pre></td></tr><tr><td class="code"><pre><span class="line">  tags: &#x2F;tags</span></pre></td></tr><tr><td class="code"><pre><span class="line">  categories: &#x2F;categories</span></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="新建一遍文章添加分类和标签"><a href="#新建一遍文章添加分类和标签" class="headerlink" title="新建一遍文章添加分类和标签"></a>新建一遍文章添加分类和标签</h3></li>
+</ul>
+<p><code>hexo new &quot;文件名&quot;</code></p>
+<p><strong>在文件内添加</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: Hexo搭建个人博客</span></pre></td></tr><tr><td class="code"><pre><span class="line">date: 2019-12-04 14:41:31</span></pre></td></tr><tr><td class="code"><pre><span class="line">tags: [hexo,测试]</span></pre></td></tr><tr><td class="code"><pre><span class="line">categories: 随便写写</span></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="Markdown基本语法"><a href="#Markdown基本语法" class="headerlink" title="Markdown基本语法"></a>Markdown基本语法</h3></li>
+</ul>
+<p>进入<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">Markdown</a></p>
+]]></content>
+      <categories>
+        <category>随便写写</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo搭建个人博客</title>
+    <url>/2019/12/04/hexo/</url>
+    <content><![CDATA[<p><em>利用hexo搭建个人博客，此时已经毕业半年才开始可能已经晚了（以前在学校时总以为搭建一个自己的博客肯定很难，结果是我想错了，所以事情一定要去尝试努力过后才有资格去否定），但我不想放弃。</em></p>
+<h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h3><p>1.npm安装（Node.js下载安装），因为Hexo需用通过npm安装，而npm需要node，只要安装好node 就会自带npm，这是（自我感觉）最简单的方式。</p>
+<p>2.Github账号，Git下载（准备部署在Github上）</p>
+<h3 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h3><p><strong>Install Hexo</strong></p>
+<ul>
+<li>鼠标右键选择Git Bash Here（<del>win+R打开cmd</del>），执行命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span></pre></td></tr><tr><td class="code"><pre><span class="line">hexo init blog</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm install</span></pre></td></tr><tr><td class="code"><pre><span class="line">hexo server</span></pre></td></tr></table></figure>
+<ul>
+<li>在浏览器输 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 本地预览效果,就能看到博客网站了。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>随便写写</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/12/04/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
