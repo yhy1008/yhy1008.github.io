@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>js一些常用函数</title>
+    <url>/2020/11/11/js%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。<br>注意：<br>filter() 不会对空数组进行检测。<br>filter() 不会改变原始数组。<br><strong>语法：</strong><br>array.filter(function(currentValue,index,arr), thisValue)</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。<br>注意：<br>map() 不会对空数组进行检测。<br>map() 不会改变原始数组。<br><strong>语法：</strong><br>array.map(function(currentValue,index,arr), thisValue)</p>
+<ul>
+<li>描述<br>currentValue    必须。当前元素的值<br>index    可选。当前元素的索引值<br>arr    可选。当前元素属于的数组对象</li>
+</ul>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><p>concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。<br>注意：<br>concat() 不会改变原始数组。<br>如果省略了valueN参数，则concat会返回old_array数组的浅拷贝。<br><strong>语法：</strong><br>var new_array = old_array.concat(value1[, value2[, …[, valueN]]])</p>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h3><p>reverse() 方法用于颠倒数组中元素的顺序。返回的是颠倒后的数组，会改变原数组。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1,2,3];</span></pre></td></tr><tr><td class="code"><pre><span class="line">console.log(arr.reverse()); &#x2F;&#x2F;[3, 2, 1]</span></pre></td></tr><tr><td class="code"><pre><span class="line">console.log(arr);  &#x2F;&#x2F;[3, 2, 1]</span></pre></td></tr></table></figure>
+<p>注意：<br>reverse() 会改变原数组。</p>
+<h3 id="every与some"><a href="#every与some" class="headerlink" title="every与some"></a>every与some</h3><p>every与some两个方法是判读数组中每一项满不满足这个条件。<br>every表示每一项都满足返回true，否则返回false。<br>some表示数组中有满足的就返回true，否则false。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1,2,3]</span></pre></td></tr><tr><td class="code"><pre><span class="line">var res &#x3D; arr.every(function(item,index)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	return item &gt; 2</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">console.log(res) &#x2F;&#x2F; false</span></pre></td></tr><tr><td class="code"><pre><span class="line">var res &#x3D; arr.some(function(item,index)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	return item &gt; 2</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">console.log(res) &#x2F;&#x2F; true</span></pre></td></tr></table></figure>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>set() 方法用来去重数组。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var mySet &#x3D; new Set([1, 2, 2, 3]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">let newArr &#x3D; Array.from(mySet);</span></pre></td></tr><tr><td class="code"><pre><span class="line">console.log(newArr); &#x2F;&#x2F; [1, 2, 3]</span></pre></td></tr></table></figure>
+<blockquote>
+<p>展开操作符 …(点点点)</p>
+</blockquote>
+<p><code>[...mySet]; // [1, 2, 3]</code></p>
+<h3 id="flat"><a href="#flat" class="headerlink" title="flat"></a>flat</h3><p>flat()方法处理嵌套数组转一维数组。<br>flat(depth)，参数depth，代表展开嵌套数组的深度，默认是1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let arr &#x3D; [1, [2, 3, [4, [5]]]];</span></pre></td></tr><tr><td class="code"><pre><span class="line">arr.flat(3); &#x2F;&#x2F; [1,2,3,4,5]</span></pre></td></tr></table></figure>
+
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><blockquote>
+<p>箭头函数是ES6标准新增的一种函数，简化了函数定义。</p>
+</blockquote>
+<p><strong>箭头函数：</strong><br>x =&gt; x * x<br>上面的箭头函数相当于：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function (x) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    return x * x;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p>注意：<br>箭头函数有两种格式，一种像上面的，只包含一个表达式，连{}和return都省略掉了。还有一种可以包含多条语句，这时候就不能省略{}和return：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arr.map((x, y) &#x3D;&gt; &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    return ???</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo-admin</title>
     <url>/2019/12/16/admin/</url>
     <content><![CDATA[<h5 id="插件介绍"><a href="#插件介绍" class="headerlink" title="插件介绍"></a>插件介绍</h5><p>hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。</p>
