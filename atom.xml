@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>幸福</title>
+  
+  <subtitle>跌跌撞撞的前行</subtitle>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-11-11T08:42:25.001Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>yhy</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js一些常用函数</title>
+    <link href="http://yoursite.com/2020/11/11/js%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2020/11/11/js%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</id>
+    <published>2020-11-11T08:35:00.000Z</published>
+    <updated>2020-11-11T08:42:25.001Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。<br>注意：<br>filter() 不会对空数组进行检测。<br>filter() 不会改变原始数组。<br><strong>语法：</strong><br>array.filter(function(currentValue,index,arr), thisValue)</p><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。<br>注意：<br>map() 不会对空数组进行检测。<br>map() 不会改变原始数组。<br><strong>语法：</strong><br>array.map(function(currentValue,index,arr), thisValue)</p><ul><li>描述<br>currentValue    必须。当前元素的值<br>index    可选。当前元素的索引值<br>arr    可选。当前元素属于的数组对象</li></ul><h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><p>concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。<br>注意：<br>concat() 不会改变原始数组。<br>如果省略了valueN参数，则concat会返回old_array数组的浅拷贝。<br><strong>语法：</strong><br>var new_array = old_array.concat(value1[, value2[, …[, valueN]]])</p><h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h3><p>reverse() 方法用于颠倒数组中元素的顺序。返回的是颠倒后的数组，会改变原数组。  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [1,2,3];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">console.log(arr.reverse()); &#x2F;&#x2F;[3, 2, 1]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">console.log(arr);  &#x2F;&#x2F;[3, 2, 1]</span></pre></td></tr></table></figure><p>注意：<br>reverse() 会改变原数组。</p><h3 id="every与some"><a href="#every与some" class="headerlink" title="every与some"></a>every与some</h3><p>every与some两个方法是判读数组中每一项满不满足这个条件。<br>every表示每一项都满足返回true，否则返回false。<br>some表示数组中有满足的就返回true，否则false。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [1,2,3]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">var res &#x3D; arr.every(function(item,index)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">return item &gt; 2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">console.log(res) &#x2F;&#x2F; false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">var res &#x3D; arr.some(function(item,index)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">return item &gt; 2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">console.log(res) &#x2F;&#x2F; true</span></pre></td></tr></table></figure><h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>set() 方法用来去重数组。 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">var mySet &#x3D; new Set([1, 2, 2, 3]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">let newArr &#x3D; Array.from(mySet);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">console.log(newArr); &#x2F;&#x2F; [1, 2, 3]</span></pre></td></tr></table></figure><blockquote><p>展开操作符 …(点点点)</p></blockquote><p><code>[...mySet]; // [1, 2, 3]</code></p><h3 id="flat"><a href="#flat" class="headerlink" title="flat"></a>flat</h3><p>flat()方法处理嵌套数组转一维数组。<br>flat(depth)，参数depth，代表展开嵌套数组的深度，默认是1</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">let arr &#x3D; [1, [2, 3, [4, [5]]]];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">arr.flat(3); &#x2F;&#x2F; [1,2,3,4,5]</span></pre></td></tr></table></figure><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><blockquote><p>箭头函数是ES6标准新增的一种函数，简化了函数定义。</p></blockquote><p><strong>箭头函数：</strong><br>x =&gt; x * x<br>上面的箭头函数相当于：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">function (x) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    return x * x;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><p>注意：<br>箭头函数有两种格式，一种像上面的，只包含一个表达式，连{}和return都省略掉了。还有一种可以包含多条语句，这时候就不能省略{}和return：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">arr.map((x, y) &#x3D;&gt; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    return ???</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;filter&quot;&gt;&lt;a href=&quot;#filter&quot; class=&quot;headerlink&quot; title=&quot;filter&quot;&gt;&lt;/a&gt;filter&lt;/h3&gt;&lt;p&gt;filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。&lt;br&gt;注意：</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-admin</title>
+    <link href="http://yoursite.com/2019/12/16/admin/"/>
+    <id>http://yoursite.com/2019/12/16/admin/</id>
+    <published>2019-12-16T07:16:00.000Z</published>
+    <updated>2019-12-18T02:38:52.767Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="插件介绍"><a href="#插件介绍" class="headerlink" title="插件介绍"></a>插件介绍</h5><p>hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。</p><a id="more"></a><h5 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h5><ol><li>首先进入hexo创建的博客项目的根目录下，执行</li></ol><p><code>npm install --save hexo-admin</code></p><p>mac可能需要root权限，前面加个sudo 就可以了（如果报错缺少组件，则缺少什么安装什么，npm install 加缺少的组件）。</p><ol start="2"><li>运行下列命令启动hexo-admin：</li></ol><p><code>hexo server -d</code></p><p>打开 <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a> 就可以访问到hexo-admin管理页面了。</p><p><img src="/2019/12/16/admin/20191217.png" alt="管理界面"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h5 id=&quot;插件介绍&quot;&gt;&lt;a href=&quot;#插件介绍&quot; class=&quot;headerlink&quot; title=&quot;插件介绍&quot;&gt;&lt;/a&gt;插件介绍&lt;/h5&gt;&lt;p&gt;hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随便写写" scheme="http://yoursite.com/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/"/>
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 在博文中插入图片</title>
+    <link href="http://yoursite.com/2019/12/10/photo/"/>
+    <id>http://yoursite.com/2019/12/10/photo/</id>
+    <published>2019-12-10T09:39:00.000Z</published>
+    <updated>2019-12-18T02:39:02.809Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2019/12/10/photo/20191210.jpg" alt="插入本地图片"></p><a id="more"></a><ul><li><p>插入本地图片需要修改主题_config.yml配置文件post_asset_folder项为true</p></li><li><p>使用插件达到插入本地图片，在根目录输入如下命令安装：</p></li></ul><p><code>npm install hexo-asset-image --save</code></p><p>上面的命令可能会有问题，然后执行下面的命令：</p><p><code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></p><p>之后new 一篇博客时/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹，把图片放到里面即可，最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，最后只需要在xxxx.md中按照markdown的格式引入图片：<br>![你想输入的替代文字]（xxxx/图片名.jpg）就可以了。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2019/12/10/photo/20191210.jpg&quot; alt=&quot;插入本地图片&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随便写写" scheme="http://yoursite.com/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/"/>
+    
+    
+    <category term="photo" scheme="http://yoursite.com/tags/photo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客添加tags及categories</title>
+    <link href="http://yoursite.com/2019/12/05/page/"/>
+    <id>http://yoursite.com/2019/12/05/page/</id>
+    <published>2019-12-05T09:31:17.000Z</published>
+    <updated>2019-12-18T02:37:42.022Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><h3 id="创建分类和标签文件夹"><a href="#创建分类和标签文件夹" class="headerlink" title="创建分类和标签文件夹"></a>创建分类和标签文件夹</h3></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hexo new page categories</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hexo new page tags</span></pre></td></tr></table></figure><a id="more"></a><p><strong>找到各自文件夹下index.md这个文件，打开后并修改</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">title: categories</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">date: 2019-12-04 15:26:59</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">type: categories</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">title: tags</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">date: 2019-12-04 15:10:52</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">type: tags</span></pre></td></tr></table></figure><ul><li><h3 id="配置菜单，「分类」、「标签」这些菜单"><a href="#配置菜单，「分类」、「标签」这些菜单" class="headerlink" title="配置菜单，「分类」、「标签」这些菜单"></a>配置菜单，「分类」、「标签」这些菜单</h3></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">menu:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  home: &#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  archives: &#x2F;archives</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  tags: &#x2F;tags</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  categories: &#x2F;categories</span></pre></td></tr></table></figure><ul><li><h3 id="新建一遍文章添加分类和标签"><a href="#新建一遍文章添加分类和标签" class="headerlink" title="新建一遍文章添加分类和标签"></a>新建一遍文章添加分类和标签</h3></li></ul><p><code>hexo new &quot;文件名&quot;</code></p><p><strong>在文件内添加</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">title: Hexo搭建个人博客</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">date: 2019-12-04 14:41:31</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tags: [hexo,测试]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">categories: 随便写写</span></pre></td></tr></table></figure><ul><li><h3 id="Markdown基本语法"><a href="#Markdown基本语法" class="headerlink" title="Markdown基本语法"></a>Markdown基本语法</h3></li></ul><p>进入<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">Markdown</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h3 id=&quot;创建分类和标签文件夹&quot;&gt;&lt;a href=&quot;#创建分类和标签文件夹&quot; class=&quot;headerlink&quot; title=&quot;创建分类和标签文件夹&quot;&gt;&lt;/a&gt;创建分类和标签文件夹&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo new page categories&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo new page tags&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="随便写写" scheme="http://yoursite.com/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/"/>
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo搭建个人博客</title>
+    <link href="http://yoursite.com/2019/12/04/hexo/"/>
+    <id>http://yoursite.com/2019/12/04/hexo/</id>
+    <published>2019-12-04T06:41:31.000Z</published>
+    <updated>2019-12-18T02:19:47.481Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>利用hexo搭建个人博客，此时已经毕业半年才开始可能已经晚了（以前在学校时总以为搭建一个自己的博客肯定很难，结果是我想错了，所以事情一定要去尝试努力过后才有资格去否定），但我不想放弃。</em></p><h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h3><p>1.npm安装（Node.js下载安装），因为Hexo需用通过npm安装，而npm需要node，只要安装好node 就会自带npm，这是（自我感觉）最简单的方式。</p><p>2.Github账号，Git下载（准备部署在Github上）</p><h3 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h3><p><strong>Install Hexo</strong></p><ul><li>鼠标右键选择Git Bash Here（<del>win+R打开cmd</del>），执行命令</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">hexo init blog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">npm install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">hexo server</span></pre></td></tr></table></figure><ul><li>在浏览器输 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 本地预览效果,就能看到博客网站了。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;em&gt;利用hexo搭建个人博客，此时已经毕业半年才开始可能已经晚了（以前在学校时总以为搭建一个自己的博客肯定很难，结果是我想错了，所以事情一定要去尝试努力过后才有资格去否定），但我不想放弃。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;一、准备工作&quot;&gt;&lt;a href=&quot;#一、准备工</summary>
+      
+    
+    
+    
+    <category term="随便写写" scheme="http://yoursite.com/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/"/>
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+    <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/12/04/hello-world/"/>
+    <id>http://yoursite.com/2019/12/04/hello-world/</id>
+    <published>2019-12-04T06:31:06.127Z</published>
+    <updated>2019-12-04T06:31:06.128Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
